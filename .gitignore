@@ -1,0 +1,79 @@
+# ============================================================
+# .gitignore — AI & Cybersecurity Defense Academy (Assignment 4)
+# ============================================================
+# Repositorio: instalación Moodle 4.4.12 + plugins custom +
+# dump SQL + CSV de usuarios.
+
+# --- Configuración con credenciales (NUNCA commitear) ---
+config.php
+config.php.bak
+config.local.php
+
+# --- Datos del sitio (fuera del repo de código) ---
+moodledata/
+sitedata/
+
+# --- Cachés / temporales / logs ---
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.cache/
+cache/stores/
+cache/locks/
+
+# --- IDE y editores ---
+.vscode/
+.idea/
+*.sublime-*
+nbproject/
+
+# --- Sistemas operativos ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Claude Code (sesiones, configuración local) ---
+.claude/
+.claudeignore
+
+# --- Backups locales / dumps secundarios ---
+*.sql.bak
+*.dump
+backup-*.sql
+
+# --- Node / build artefacts (en themes y AMD modules) ---
+node_modules/
+**/node_modules/
+.npm/
+package-lock.json.bak
+yarn-error.log
+
+# --- Composer ---
+# vendor/ NO se ignora: Moodle 4.4 lo necesita pre-instalado en algunos casos
+composer.phar
+
+# --- PHPUnit / Behat (artefactos de test locales) ---
+phpunit.xml
+behat.yml
+.phpunit.result.cache
+
+# --- Archivos sensibles potenciales ---
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.local
+secrets.json
+
+# --- Workflows de Moodle upstream (no aplican a este assignment) ---
+# El token OAuth de gh no tiene scope `workflow`, y este es un repo
+# privado del assignment, no la organización Moodle. CI no deseado.
+.github/workflows/
